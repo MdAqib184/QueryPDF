@@ -20,12 +20,17 @@ function App() {
                 body: formData,
             });
 
-            if (!response.ok) throw new Error("File upload failed");
+            if (!response.ok) {
+                console.error("Response status:", response.status, response.statusText);
+                throw new Error("File upload failed");
+            }
 
             const data = await response.json();
             console.log("File uploaded successfully:", data.message);
+            alert("File uploaded successfully!");
         } catch (error) {
-            console.error("Error uploading file:", error);
+            console.error("Error uploading file:", error.message);
+            alert("Error uploading file. Please try again.");
         }
     };
 
@@ -39,6 +44,7 @@ function App() {
             ]);
         } catch (error) {
             console.error("Error getting answer:", error);
+            alert("Error retrieving answer. Please try again.");
         }
     };
 
@@ -52,12 +58,15 @@ function App() {
                 body: JSON.stringify({ question }),
             });
 
-            if (!response.ok) throw new Error("Error fetching answer");
+            if (!response.ok) {
+                console.error("Response status:", response.status, response.statusText);
+                throw new Error("Error fetching answer");
+            }
 
             const data = await response.json();
             return data.answer;
         } catch (error) {
-            console.error("Error in fetchAnswer:", error);
+            console.error("Error in fetchAnswer:", error.message);
             return "Sorry, there was an error processing your question.";
         }
     };
