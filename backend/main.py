@@ -1,4 +1,3 @@
-# main.py
 import os
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
@@ -13,7 +12,7 @@ os.makedirs("uploads", exist_ok=True)
 # Allow CORS for frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000/"],  # Update this to match your frontend's origin
+    allow_origins=["http://localhost:3000"],  # Remove trailing slash
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -36,7 +35,7 @@ async def upload_pdf(file: UploadFile = File(...)):
         
         return {"message": f"File '{file.filename}' uploaded successfully!"}
     except Exception as e:
-        raise HTTPException(status_code=500, detail="File upload failed")
+        raise HTTPException(status_code=500, detail=f"File upload failed: {str(e)}")
 
 @app.post("/ask/")
 async def ask_question(question: Question):
