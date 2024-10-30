@@ -6,10 +6,13 @@ QueryPDF is a full-stack application that enables users to upload PDF documents 
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Setup Instructions](#setup-instructions)
+  - [Prerequisites](#prerequisites)
   - [Backend Setup (FastAPI + LangChain + LlamaIndex)](#backend-setup-fastapi--langchain--llamaindex)
   - [Frontend Setup (React)](#frontend-setup-react)
 - [Usage](#usage)
+- [Demo Video](#demo-video)
 - [Technologies Used](#technologies-used)
+- [URLs](#urls)
 
 ## Features
 - Upload a PDF document to the backend for processing.
@@ -17,8 +20,19 @@ QueryPDF is a full-stack application that enables users to upload PDF documents 
 - Receive answers by analyzing the document’s text.
 
 ## Project Structure
-assn │ ├───backend │ ├── main.py # Backend FastAPI server │ ├── requirements.txt # Backend dependencies │ └── ... # Other backend files │ └───frontend ├── src │ ├── App.js # Main React component │ └── ... # Other frontend files └── package.json # Frontend dependencies
-
+assn
+│
+├───backend
+│   ├── main.py              # Backend FastAPI server
+│   ├── requirements.txt      # Backend dependencies
+│   └── ...                   # Other backend files
+│
+└───frontend
+    ├── src
+    │   ├── App.js            # Main React component
+    │   └── ...               # Other frontend files
+    ├── package.json          # Frontend dependencies
+    └── ...                   # Other frontend files
 
 ## Setup Instructions
 
@@ -55,6 +69,13 @@ assn │ ├───backend │ ├── main.py # Backend FastAPI server │ 
 2. **Ask a Question:** After the PDF is uploaded, enter a question in the input box related to the document’s content.
 3. **Receive an Answer:** The backend processes the question and provides a response based on the document's content.
 
+## Demo Video
+Watch the demo video [here](https://query-pdf-rouge.vercel.app).
+
 ## Technologies Used
 - **Frontend:** React, Vercel (deployment)
 - **Backend:** FastAPI, Render (deployment), LangChain, LlamaIndex, PyMuPDF.
+
+## URLs
+- **Frontend URL:** [https://query-pdf-rouge.vercel.app](https://query-pdf-rouge.vercel.app)
+- **Backend URL:** [https://querypdf-8s2s.onrender.com](https://querypdf-8s2s.onrender.com)
