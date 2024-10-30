@@ -20,9 +20,7 @@ os.makedirs("uploads", exist_ok=True)
 # Allow CORS for frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://query-pdf-rouge.vercel.app/"  # Vercel deployed frontend URL
-    ],
+    allow_origins=["https://query-pdf-rouge.vercel.app"],  # Your Vercel URL without a trailing slash
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
