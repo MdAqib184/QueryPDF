@@ -14,7 +14,10 @@ os.makedirs("uploads", exist_ok=True)
 # Allow CORS for frontend access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Adjust this if your frontend runs elsewhere
+    allow_origins=[
+        "http://localhost:3000",
+        "https://query-pdf-rouge.vercel.app/"
+        ],  # Adjust this if your frontend runs elsewhere
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
