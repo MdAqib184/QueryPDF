@@ -9,7 +9,7 @@ function App() {
     const [uploadedFileName, setUploadedFileName] = useState(null); // Track the uploaded file name
 
     // API base URL for FastAPI backend
-    const API_BASE_URL = "http://127.0.0.1:8000";
+    const API_BASE_URL = "https://querypdf-8s2s.onrender.com/";
 
     const handleFileUpload = async (file) => {
         try {
